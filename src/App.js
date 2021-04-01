@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Button, Alert } from "react-bootstrap"
+import SignInSignUp from "./page/SignInSignUp";
 
-function App() {
+import { ToastContainer } from "react-toastify";
+
+
+
+
+export default function App() {
+
+  const [user, setUser] = useState({
+    name: "Edgar"
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {user ? (
+        <div>
+          <SignInSignUp />
+        </div>
+      ) : (
+        <h1>No Estas logueado</h1>
+      )}
+      <ToastContainer 
+        positionToast="top-right"
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnVisibilityChange
+        draggable
+        pauseOnHover     
+      />
     </div>
-  );
+  )
 }
 
-export default App;
