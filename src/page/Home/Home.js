@@ -8,7 +8,7 @@ import { getTweetsFollowersApi } from "../../api/tweet";
 import "./Home.scss"
 
 export default function Home(props) {
-    const { setRefresCheckLogin } = props
+    const { setRefreshCheckLogin } = props
     const [tweets, setTweets] = useState(null)
     const [page, setPage] = useState(1)
     const [loadingTweets, setLoadingTweets] = useState(false)
@@ -38,7 +38,7 @@ export default function Home(props) {
 
 
     return (
-        <BasicLayout className="home" setRefresCheckLogin={setRefresCheckLogin}>
+        <BasicLayout className="home" setRefreshCheckLogin={setRefreshCheckLogin}>
             <div className="home__title">
                 <h2>Inicio</h2>
             </div>

@@ -14,11 +14,11 @@ export default function App() {
 
   const [user, setUser] = useState(null);
   const [loadUser, setLoadUser] = useState(false)
-  const [refresCheckLogin, setRefresCheckLogin] = useState(false)
+  const [refresCheckLogin, setRefreshCheckLogin] = useState(false)
 
   useEffect(() => {
     setUser(isUserLoggedApi());
-    setRefresCheckLogin(false)
+    setRefreshCheckLogin(false)
     setLoadUser(true)
   }, [refresCheckLogin])
 
@@ -26,7 +26,7 @@ export default function App() {
 
   return (
     <AuthContext.Provider value={user}>
-      {user ? <Routing setRefresCheckLogin={setRefresCheckLogin} />: <SignInSignUp setRefresCheckLogin={setRefresCheckLogin}/>}
+      {user ? <Routing setRefreshCheckLogin={setRefreshCheckLogin} />: <SignInSignUp setRefreshCheckLogin={setRefreshCheckLogin}/>}
       <ToastContainer 
         positionToast="top-right"
         autoClose={5000}

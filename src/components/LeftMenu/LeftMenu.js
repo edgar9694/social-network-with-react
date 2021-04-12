@@ -16,12 +16,12 @@ import TweetModal from "../Modal/TweetModal";
 import "./LeftMenu.scss";
 
 export default function LeftMenu(props) {
-    const { setRefresCheckLogin } = props
+    const { setRefreshCheckLogin } = props
     const [showModal, setShowModal] = useState(false)
     const user = useAuth();
     const logout = () =>{
         logoutApi();
-        setRefresCheckLogin(true)
+        setRefreshCheckLogin(true)
     }
     return (
         <div className="left-menu">

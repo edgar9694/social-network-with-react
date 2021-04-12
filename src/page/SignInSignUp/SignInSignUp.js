@@ -15,7 +15,7 @@ import logoSocialNetwork from "../../assets/png/logo.png";
 import "./SignInSignUp.scss";
 
 export default function SignInSignUp(props) {
-    const { setRefresCheckLogin } = props
+    const { setRefreshCheckLogin } = props
     const [showModal, setShowModal] = useState(false)
     const [contentModal, setContentModal] = useState(null)
 
@@ -31,7 +31,7 @@ export default function SignInSignUp(props) {
                     <RightComponent
                         openModal={openModal}
                         setShowModal={setShowModal}
-                        setRefresCheckLogin={setRefresCheckLogin}
+                        setRefreshCheckLogin={setRefreshCheckLogin}
                     />
                 </Row>
             </Container>
@@ -67,7 +67,7 @@ function LeftComponent() {
 }
 
 function RightComponent(props) {
-    const { openModal, setShowModal, setRefresCheckLogin} = props
+    const { openModal, setShowModal, setRefreshCheckLogin} = props
     return (
         <Col className="signin-signup__right"  xs={6}>
             <div>
@@ -83,7 +83,7 @@ function RightComponent(props) {
                 </Button>
                 <Button 
                 variant="outline-primary"
-                onClick={() => openModal(<SignInForm setRefresCheckLogin={setRefresCheckLogin}/>)}
+                onClick={() => openModal(<SignInForm setRefreshCheckLogin={setRefreshCheckLogin}/>)}
                 >Iniciar sesión</Button>
             </div>
         </Col>
