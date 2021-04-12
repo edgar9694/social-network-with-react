@@ -82,7 +82,7 @@ export function isUserLoggedApi(){
         return null
     }
     if(isExpiredToken(token)){
-
+        return null
     }
     return jwtDecode(token)
 }
@@ -93,7 +93,7 @@ export function isExpiredToken(token){
     const timeout = expire - Date.now()
 
     if(timeout < 0) {
-        return true
+        return true;
     }
     return false
 }

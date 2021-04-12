@@ -3,6 +3,7 @@ import { Button, Alert } from "react-bootstrap"
 import SignInSignUp from "./page/SignInSignUp";
 import { AuthContext } from "./utils/context"
 import { isUserLoggedApi } from "./api/auth"
+import Routing from "./routes/Routing";
 
 import { ToastContainer } from "react-toastify";
 
@@ -24,8 +25,8 @@ export default function App() {
   if(!loadUser) return null;
 
   return (
-    <AuthContext.Provider>
-      {user ? <h1>Estas logueado</h1>: <SignInSignUp setRefresCheckLogin={setRefresCheckLogin}/>}
+    <AuthContext.Provider value={user}>
+      {user ? <Routing setRefresCheckLogin={setRefresCheckLogin} />: <SignInSignUp setRefresCheckLogin={setRefresCheckLogin}/>}
       <ToastContainer 
         positionToast="top-right"
         autoClose={5000}
